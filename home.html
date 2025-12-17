@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recap 1 Periode | PSHT UTM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <h1>PSHT UTM</h1>
+            <span>📺 Recap 1 Periode</span>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🏆 EDISI SPESIAL</div>
+            <h2>Satu Periode Penuh Aksi!</h2>
+            <p>Dari latihan yang bikin keringetan sampai prestasi yang bikin bangga. Ini dia recap lengkap perjalanan
+                kita! 💪</p>
+            <div class="hero-buttons">
+                <button class="btn btn-play"
+                    onclick="document.getElementById('topVideo').scrollIntoView({behavior: 'smooth'})">
+                    ▶️ Tonton Sekarang
+                </button>
+                <button class="btn btn-info"
+                    onclick="document.querySelector('.content').scrollIntoView({behavior: 'smooth'})">
+                    ℹ️ Selengkapnya
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED VIDEO -->
+    <section class="featured-video">
+        <div class="featured-video-inner">
+            <h2>🎬 Highlights Divisi Prestasi</h2>
+            <p class="featured-video-subtitle">Moment 1 periode 🔥</p>
+            <video id="topVideo" controls muted loop playsinline>
+                <source src="assets/videos/moment.mp4" type="video/mp4">
+                Browser kamu nggak support video nih 😢
+            </video>
+        </div>
+    </section>
+
+    <!-- CONTENT ROWS -->
+    <main class="content">
+
+        <!-- Row 1: Prestasi -->
+        <section class="row">
+            <div class="row-header">
+                <h3>🏆 Prestasi Membanggakan</h3>
+                <span class="row-subtitle">TRENDING #1</span>
+            </div>
+            <div class="row-posters-wrapper">
+                <button class="scroll-arrow scroll-left" onclick="scrollRow(this, -1)">‹</button>
+                <div class="row-posters">
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Champions/champ.jpg" alt="Prestasi 1">
+                        <div class="item-overlay">
+                            <div class="item-title">Sakera Championship II 🥇</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Champions/champ3.jpg" muted loop playsinline></img>
+                        <div class="item-overlay">
+                            <div class="item-title">Bojonegoro Championship</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Champions/champ2.jpg" alt="Prestasi 2">
+                        <div class="item-overlay">
+                            <div class="item-title">Trunojoyo CUP 2</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Champions/champ4.jpg" muted loop playsinline></img>
+                        <div class="item-overlay">
+                            <div class="item-title">Trunojoyo National Championship II 🥇</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Champions/champ5.jpg" alt="Prestasi 3">
+                        <div class="item-overlay">
+                            <div class="item-title">SH CUP UPN Jatim 🥇</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-arrow scroll-right" onclick="scrollRow(this, 1)">›</button>
+            </div>
+        </section>
+
+        <!-- Row 2: Latihan -->
+        <section class="row">
+            <div class="row-header">
+                <h3>Latihan⭐</h3>
+                <span class="row-subtitle">POPULER</span>
+            </div>
+            <div class="row-posters-wrapper">
+                <button class="scroll-arrow scroll-left" onclick="scrollRow(this, -1)">‹</button>
+                <div class="row-posters">
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan1.jpg" alt="Latihan 1">
+                        <div class="item-overlay">
+                            <div class="item-title">Latihan Sore</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan2.jpg" alt="latihan2">
+                        <div class="item-overlay">
+                            <div class="item-title">Latihan Sore</div>
+                            <div class="item-desc">Apapun Hasilnya, yang penting sudah berusaha!</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan3.jpg" alt="Latihan 3">
+                        <div class="item-overlay">
+                            <div class="item-title">Latihan Sore</div>
+                            <div class="item-desc">Jarang Latihan Pengen Juara</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan4.jpg" alt="Latihan 4"></img>
+                        <div class="item-overlay">
+                            <div class="item-title">Latihan Sore 💪</div>
+                            <div class="item-desc">Gatau Males Pengen Juara!</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan5.jpg" alt="Latihan 5">
+                        <div class="item-overlay">
+                            <div class="item-title">Joging 👥</div>
+                            <div class="item-desc">Sendirian kuat, bersama lebih kuat!</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan6 .jpg" alt="Latihan 6">
+                        <div class="item-overlay">
+                            <div class="item-title">Latihan Pagi 👥</div>
+                            <div class="item-desc">Sendirian kuat, bersama lebih kuat!</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Latihan/latihan7.jpg" alt="Latihan 5">
+                        <div class="item-overlay">
+                            <div class="item-title">Pose 👥</div>
+                            <div class="item-desc">Pose, Sebelum Juara Umum</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-arrow scroll-right" onclick="scrollRow(this, 1)">›</button>
+            </div>
+        </section>
+
+        <!-- Row 3: Kebersamaan -->
+        <section class="row">
+            <div class="row-header">
+                <h3>Moment Kebersamaan</h3>
+                <span class="row-subtitle">FAVORIT KAMI</span>
+            </div>
+            <div class="row-posters-wrapper">
+                <button class="scroll-arrow scroll-left" onclick="scrollRow(this, -1)">‹</button>
+                <div class="row-posters">
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Moment/moment1.jpg" alt="Kebersamaan 1">
+                        <div class="item-overlay">
+                            <div class="item-title">Foto Bareng Squad 📸</div>
+                            <div class="item-desc">Pembagian Jaket Kontingen</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Moment/moment2.jpg" alt="Kebersamaan 2"></img>
+                        <div class="item-overlay">
+                            <div class="item-title">Behind The Scenes 🎥</div>
+                            <div class="item-desc">Kumpul Sambutan</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Moment/moment3.jpg" alt="Kebersamaan 3">
+                        <div class="item-overlay">
+                            <div class="item-title">Kumpul Pengurus</div>
+                            <div class="item-desc">Kumpul Pengurus Devisi Prestasi</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Moment/moment4.jpg" alt="Kebersamaan 4"></img>
+                        <div class="item-overlay">
+                            <div class="item-title">PKKMB sakera 2025</div>
+                            <div class="item-desc">Kumpul PKKMB Sakera 2025</div>
+                        </div>
+                    </div>
+                    <div class="item" data-type="image">
+                        <img src="assets/images/Moment/moment5.jpg" alt="Kebersamaan 5">
+                        <div class="item-overlay">
+                            <div class="item-title">Acara Kumpul </div>
+                            <div class="item-desc">Kumpul Pembahasan Desain Jaket</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-arrow scroll-right" onclick="scrollRow(this, 1)">›</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-media" id="modalMedia"></div>
+            <a id="downloadBtn" class="download-btn" download target="_blank">
+                ⬇️ Download
+            </a>
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/perunggu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC TOGGLE -->
+    <button id="musicToggle" class="music-btn" title="Toggle Music">🔊</button>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.instagram.com/psht_trunojoyo/">Tentang Kami</a>
+                <a href="https://wa.me/6285708350575" target="_blank">Kontak</a>
+                <a href="https://instagram.com/rizkisunarko/">Instagram</a>
+                <a href="#">FAQ</a>
+            </div>
+            <p class="footer-text">
+                © Made with 2024 Rizki Pratama Sunarko • PSHT UTM<br>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>
