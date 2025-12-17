@@ -482,17 +482,49 @@ body {
 
 /* Mobile specific tweaks */
 @media (max-width: 480px) {
-    .hero { height: calc(40vh - var(--nav-height, 0px)); padding-bottom: 14px; }
-    .hero-content h2 { font-size: 1.6rem; }
-    .featured-video { padding: 22px 12px 18px; }
-    .featured-video video { max-height: 320px; }
-    .content { margin-top: 12px; padding: 0 12px; }
-    .item { width: 150px; }
-    .item img, .item video { height: 100px; }
-    .row h3 { font-size: 1.05rem; }
+    /* Hero: stack and shrink so featured video doesn't overlap */
+    .hero {
+        height: auto;
+        padding: 18px 12px 10px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .hero-content h2 { font-size: 1.4rem; line-height: 1.2; }
+    .hero-content p { font-size: 0.95rem; }
+
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    .btn { width: 100%; justify-content: center; }
+
+    /* Featured video smaller and with margin */
+    .featured-video { padding: 18px 12px 20px; }
+    .featured-video video { max-height: 260px; width: 100%; height: auto; }
+
+    /* Content spacing */
+    .content { margin-top: 6px; padding: 0 12px; }
+
+    /* Row header stack to avoid crowding */
+    .row-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+
+    /* Make posters easier to tap: larger and centered in scroll */
+    .row-posters { gap: 10px; }
+    .item { width: 72%; min-width: 200px; margin-right: 12px; }
+    .item img, .item video { height: 140px; }
+
+    /* Overlay text smaller */
+    .item-title { font-size: 0.9rem; }
+
+    /* Hide scroll arrows on small screens */
     .scroll-arrow { display: none; }
+
+    /* Tweak other UI */
+    .row h3 { font-size: 1.05rem; }
     .music-btn { width: 44px; height: 44px; }
-    .site-footer { padding: 20px 12px; }
+    .site-footer { padding: 18px 12px; }
 }
 
 .loading {
