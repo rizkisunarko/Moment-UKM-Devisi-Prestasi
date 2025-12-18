@@ -15,6 +15,7 @@ body {
     color: #fff;
     overflow-x: hidden;
     padding-top: var(--nav-height); /* reserve space for fixed navbar */
+    scroll-behavior: smooth; /* smooth vertical scrolling */
 }
 
 /* NAVBAR FIXED */
@@ -188,6 +189,7 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; /* enable snap scrolling for nicer animation */
     padding-bottom: 10px;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -206,6 +208,89 @@ body {
     overflow: hidden;
     position: relative;
     background: rgba(255,255,255,0.02);
+}
+
+/* Intro animation for items when they scroll into view */
+.item {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+    transition: transform 480ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+}
+
+.item.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* richer slide variants for entrance */
+.item.slide-left { transform: translateX(-28px) translateY(10px) scale(0.98); }
+.item.slide-right { transform: translateX(28px) translateY(10px) scale(0.98); }
+.item.slide-left.in-view,
+.item.slide-right.in-view {
+    transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Zoom entrance variant (preferred) */
+.item.zoom { transform: scale(0.86) translateY(12px); }
+.item.zoom.in-view { transform: scale(1) translateY(0); }
+
+/* overlay reveal inside item */
+.item .item-overlay {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: transform 360ms cubic-bezier(.2,.9,.2,1), opacity 320ms ease;
+}
+.item.in-view .item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* item title/subtext staggering */
+.item .item-title, .item .item-desc {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: transform 360ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
+}
+.item.in-view .item-title, .item.in-view .item-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Make carousel snap to center for each item */
+.item { scroll-snap-align: center; }
+
+/* allow per-item stagger via CSS variable */
+.item.in-view { transition-delay: var(--delay, 0ms); }
+
+/* Row header and hero content entrance */
+.row-header {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: transform 420ms cubic-bezier(.2,.9,.2,1), opacity 360ms ease;
+}
+.row-header.slide-left { transform: translateX(-20px) translateY(8px); }
+.row-header.slide-right { transform: translateX(20px) translateY(8px); }
+.row-header.slide-left.in-view, .row-header.slide-right.in-view { transform: translateX(0) translateY(0); }
+
+/* Zoom for headers and hero */
+.row-header.zoom { transform: scale(0.98) translateY(6px); }
+.row-header.zoom.in-view { transform: scale(1) translateY(0); }
+
+.hero-content.zoom { transform: scale(0.985) translateY(6px); }
+.hero-content.zoom.in-view { transform: scale(1) translateY(0); }
+.row-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+}
+.hero-content.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .item:hover {
@@ -293,6 +378,17 @@ body {
     max-width: var(--layout-max);
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* subtle entrance animation for featured video */
+.featured-video-inner {
+    transform: translateY(8px) scale(0.995);
+    opacity: 0;
+    transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 480ms ease;
+}
+.featured-video-inner.in-view {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }
 
 .featured-video h2 {
